@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodegcloud
+  labels:
+    app: nodegcloud
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodegcloud
+  template:
+    metadata:
+      labels:
+        app: nodegcloud
+    spec:
+    containers:
+      - name: baf61aa7c9a6
+        image: gcr.io/sit737-23t1-saqib-jave-cbc5f8a/nodegcloud
+        ports:
+         - containerPort: 8080
